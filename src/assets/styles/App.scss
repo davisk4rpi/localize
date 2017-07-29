@@ -1,5 +1,18 @@
+// Variables
+
+$purple-dark: #000070;
+$purple: #673ab7;
+$purple-light: #ede7f6;
+
+
+// General
+
 body {
-  background-color: #ede7f6;
+  background-color: $purple-light;
+}
+
+h1, h2, h3, h4, h5, h6, .ui.header {
+  color: $purple-dark;
 }
 
 // Login Page
@@ -8,4 +21,9 @@ body {
   h1{
     margin-top: 35%;
   }
+}
+
+#login-btn {
+  background-color: $purple;
+  color: #fff;
 }
