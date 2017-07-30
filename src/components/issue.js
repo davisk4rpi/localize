@@ -118,9 +118,9 @@ export default class Issue extends Component {
       }
       else {
         descriptionComponent = (
-          <Card.Description>
+          <Card.Content extra>
             {description}
-          </Card.Description>
+          </Card.Content>
         );
 
         yeaOrNay = (
@@ -140,19 +140,16 @@ export default class Issue extends Component {
       );
     }
 
-    let flexClass = isExpanded ? '' : "flex-feed-item";
-
-
     return (
       <Card fluid className="feed-item">
-        <Card.Content className={flexClass}>
-          <Image src={imgSrc} onClick={this.toggleCard} floated='left' size='tiny'/>
-          <Card.Header onClick={this.toggleCard}>
+        <Card.Content className="flex-feed-item" onClick={this.toggleCard}>
+          <Image src={imgSrc} floated='left' size='tiny'/>
+          <Card.Header>
             {title}
             <Icon name="dropdown" />
           </Card.Header>
-          {descriptionComponent}
         </Card.Content>
+        {descriptionComponent}
         {openCardContent}
       </Card>
     );
