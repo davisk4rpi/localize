@@ -9,13 +9,7 @@ export default class Issue extends Component {
     this.state = {
       data: this.props.data
     };
-
     this.toggleCard = this.toggleCard.bind(this);
-  }
-
-
-
-  componentDidMount() {
   }
 
   toggleCard() {

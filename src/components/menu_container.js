@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
-import { Grid, Button } from 'semantic-ui-react';
+import { Grid, Button, Icon } from 'semantic-ui-react';
 
 import Sidenav from './sidenav';
 import FeedContainer from './feed_container';
@@ -34,7 +34,7 @@ export default class MenuContainer extends Component {
       <Grid onClick={navVisible ? this.closeNav : undefined}>
         <Grid.Row>
           <Grid.Column>
-            <Button onClick={this.toggleVisibility}>Toggle Visibility</Button>
+            <Button onClick={this.toggleVisibility} id="menu-btn" icon><Icon name='content' size='big'/></Button>
             <Sidenav visible={navVisible}/>
           </Grid.Column>
         </Grid.Row>
