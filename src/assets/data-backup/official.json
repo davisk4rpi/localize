@@ -1,0 +1,65 @@
+{
+    "o0":{
+      "name": "Helene Schneider",
+      "position": "Mayor",
+      "location": "Santa Barbara",
+      "phone": "(805) 564-5323",
+      "email": "hschneider@santabarbaraca.gov",
+      "twitter": "MayorHelene",
+      "imgSrc": "img/helene.png"
+    },
+    "o1":{
+      "name": "Jason Dominguez",
+      "position": "Mayor Pro Tempore",
+      "location": "Santa Barbara",
+      "phone": "(805) 564-5324",
+      "email": "JDominguez@SantaBarbaraCA.gov",
+      "twitter": "",
+      "imgSrc": "img/jason.png"
+    },
+    "o2":{
+      "name": "Gregg Hart",
+      "position": "Finance Committee Chair",
+      "location": "Santa Barbara",
+      "phone": "(805) 564-5319",
+      "email": "ghart@santabarbaraca.gov",
+      "twitter": "",
+      "imgSrc": "img/gregg.png"
+    },
+    "o3":{
+      "name": "Randy Rowse",
+      "position": "Ordinance Committee Chair",
+      "location": "Santa Barbara",
+      "phone": "(805) 564-5325",
+      "email": "rrowse@santabarbaraca.gov",
+      "twitter": "",
+      "imgSrc": "img/randy.png"
+    },
+    "o4":{
+      "name": "Frank HotchKiss",
+      "position": "Councilmember",
+      "location": "Santa Barbara",
+      "phone": "(805) 564-5320",
+      "email": "fhotchkiss@santabarbaraca.gov",
+      "twitter": "",
+      "imgSrc": "img/frank.png"
+    },
+    "o5":{
+      "name": "Cathy Murillo",
+      "position": "Councilmember",
+      "location": "Santa Barbara",
+      "phone": "(805) 564-5322",
+      "email": "cmurillo@santabarbaraca.gov",
+      "twitter": "CathyMurillo",
+      "imgSrc": "img/cathy.png"
+    },
+    "o6":{
+      "name": "Harwood 'Bendy' White",
+      "position": "Councilmember",
+      "location": "Santa Barbara",
+      "phone": "(805) 564-5321",
+      "email": "hwhite@santabarbaraca.gov",
+      "twitter": "bendywhite4sb",
+      "imgSrc": "img/harwood.png"
+    }
+}
