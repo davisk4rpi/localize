@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
-import { Grid, Button, Icon } from 'semantic-ui-react';
+import { Grid, Button, Icon, Header } from 'semantic-ui-react';
 
 import Sidenav from './sidenav';
 import FeedContainer from './feed_container';
@@ -9,6 +9,7 @@ import VolunteerContainer from './volunteer_container';
 import RepContainer from './rep_container';
 import ProfilePage from './profile_page';
 import DonatePage from './donate_page';
+import FeedbackPage from './feedback_page';
 
 export default class MenuContainer extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ export default class MenuContainer extends Component {
         <Grid.Row>
           <Grid.Column>
             <Button onClick={this.toggleVisibility} id="menu-btn" icon><Icon name='content' size='big'/></Button>
+            <Header as="h1" floated="right" id="brand-logo">Localize</Header>
             <Sidenav visible={navVisible}/>
           </Grid.Column>
         </Grid.Row>
@@ -47,6 +49,7 @@ export default class MenuContainer extends Component {
             <Route path="/profile" component={ProfilePage} />
             <Route path="/volunteer" component={VolunteerContainer} />
             <Route path="/donate" component={DonatePage} />
+            <Route path="/feedback" component={FeedbackPage} />
           </Grid.Column>
         </Grid.Row>
       </Grid>

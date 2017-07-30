@@ -29,6 +29,9 @@ export default class Sidenav extends Component {
         <Menu.Item name='settings' as={Link} to='/settings'>
           Settings
         </Menu.Item>
+        <Menu.Item name='feedback' as={Link} to='/feedback'>
+          Feedback
+        </Menu.Item>
         <Menu.Item  as={Link} to='/' name='logout'>
           Logout
         </Menu.Item>
