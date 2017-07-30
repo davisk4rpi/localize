@@ -11,7 +11,7 @@ $purple-light: #ede7f6;
 // General
 
 body {
-  background-color: $purple-light;
+  background-color: black;
 }
 
 h1, h2, h3, h4, h5, h6, .ui.header {
@@ -27,6 +27,29 @@ h1, h2, h3, h4, h5, h6, .ui.header {
   text-transform: uppercase;
   font-family: 'Arvo', serif;
   font-weight: 700;
+}
+
+#brand-logo,
+.ui.header,
+.ui.form .field>label {
+  color: white !important;
+}
+
+.bg-img{
+  background-image: url('/img/sb.jpg');
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  opacity: .5;
+}
+
+.ui.fluid.card {
+  margin-bottom: 40px;
 }
 
 // Login Page

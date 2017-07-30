@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Header } from 'semantic-ui-react';
-import LoginBox from './login_box.js'
-import SignUpBox from './sign_up_box.js'
+import LoginBox from './login_box.js';
+import SignUpBox from './sign_up_box.js';
 
 export default class LandingPage extends Component {
   constructor(props) {
