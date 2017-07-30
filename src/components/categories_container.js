@@ -13,11 +13,11 @@ export default class CategoriesContainer extends Component {
         'Business',
         'Crime',
         'Environment',
-        'Food + Agriculture',
+        'Food & Agriculture',
         'Health',
         'Housing',
         'Infrastructure',
-        'Parks + Recreation',
+        'Parks & Recreation',
         'Social Services',
         'Taxes',
         'Transportation'

@@ -59,14 +59,21 @@ h1, h2, h3, h4, h5, h6 {
 #rep-page .ui.header {
   color: white; }
 
-#rep-card .header {
+#rep-page a {
+  font-size: 16px; }
+
+.rep-card .header {
   margin-top: 25px; }
+
+.rep-card.ui.fluid.card {
+  margin-bottom: 20px; }
 
 .text-center {
   text-align: center; }
 
 .profile-photo {
-  border-radius: 10px; }
+  border-radius: 10px;
+  margin-bottom: 30px; }
 
 #paypal-btn {
   display: block;
@@ -80,3 +87,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #categories-page i.icon:before {
   color: black; }
+
+#profile-page .header {
+  color: white !important; }

@@ -47,7 +47,7 @@ export default class Rep extends Component {
     );
 
     return (
-      <Card fluid id="rep-card">
+      <Card fluid className="rep-card">
         <Card.Content>
           <Image src={imgSrc} floated='left' shape="circular" size='tiny'/>
           <Card.Header>

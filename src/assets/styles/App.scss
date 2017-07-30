@@ -88,11 +88,19 @@ h1, h2, h3, h4, h5, h6 {
   .ui.header {
     color: white;
   }
+
+  a {
+    font-size: 16px;
+  }
 }
 
-#rep-card {
+.rep-card {
   .header {
     margin-top: 25px;
+  }
+
+  &.ui.fluid.card {
+    margin-bottom: 20px;
   }
 }
 
@@ -104,6 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .profile-photo {
   border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 // Donations Page
@@ -123,4 +132,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #categories-page i.icon:before {
   color: black;
+}
+
+#profile-page {
+  .header {
+    color: white !important;
+  }
 }
