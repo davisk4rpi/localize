@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import { Sidebar, Menu, Icon } from 'semantic-ui-react'
 
 export default class Sidenav extends Component {
@@ -6,23 +7,26 @@ export default class Sidenav extends Component {
     const { visible } = this.props
     return (
       <Sidebar as={Menu} animation='overlay' width='thin' visible={visible} icon='labeled' vertical inverted>
-        <Menu.Item name='home'>
-          <Icon name='user' />
+        <Menu.Item name='home' as={Link} to='/profile'>
+          <Icon name='user'/>
           Profile
         </Menu.Item>
-        <Menu.Item name='my-reps'>
+        <Menu.Item as={Link} to='/feed' name='my-feed'>
+          My Feed
+        </Menu.Item>
+        <Menu.Item as={Link} to='/reps' name='my-reps'>
           My Reps
         </Menu.Item>
         <Menu.Item name='rtv'>
-          Register to Vote
+          <a href="https://www.rockthevote.com/register-to-vote/" target="_blank" rel="noopener noreferrer">Register to Vote</a>
         </Menu.Item>
-        <Menu.Item name='volunteer'>
+        <Menu.Item  as={Link} to='/volunteer' name='volunteer'>
           Volunteer
         </Menu.Item>
-        <Menu.Item name='settings'>
+        <Menu.Item name='settings' as={Link} to='/settings'>
           Settings
         </Menu.Item>
-        <Menu.Item name='logout'>
+        <Menu.Item  as={Link} to='/' name='logout'>
           Logout
         </Menu.Item>
       </Sidebar>

@@ -1,21 +1,15 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
-import { Button, Grid } from 'semantic-ui-react';
-import Sidenav from './sidenav';
+
 import Issue from './issue';
 import database from '../database';
 
 export default class FeedContainer extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       issues: {},
-      navVisible: false
     };
-
-    this.closeNav = this.closeNav.bind(this);
-    this.toggleVisibility = this.toggleVisibility.bind(this);
   }
 
   componentDidMount() {
@@ -27,18 +21,8 @@ export default class FeedContainer extends Component {
     });
   }
 
-  toggleVisibility() {
-    this.setState({ navVisible: !this.state.navVisible });
-  }
-
-  closeNav() {
-    if (this.state.navVisible) {
-      this.setState({navVisible: false});
-    }
-  }
-
   render() {
-    const {navVisible, issues} = this.state;
+    const {issues} = this.state;
     let issueId, issueObj;
     const issueComponents = _.map(issues, (value, key) => {
       issueId = key;
@@ -52,19 +36,9 @@ export default class FeedContainer extends Component {
     });
 
     return (
-      <Grid onClick={navVisible ? this.closeNav : undefined}>
-        <Grid.Row>
-          <Grid.Column>
-            <Button onClick={this.toggleVisibility}>Toggle Visibility</Button>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
-            {issueComponents}
-          </Grid.Column>
-        </Grid.Row>
-        <Sidenav visible={navVisible} />
-      </Grid>
+      <div>
+        {issueComponents}
+      </div>
     );
   }
 }
