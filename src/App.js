@@ -8,10 +8,13 @@ import MenuContainer from './components/menu_container.js';
 class App extends Component {
   render() {
     return (
-      <Container>
-        <Route exact path="/" component={LandingPage} />
-        <Route path="/:any" component={MenuContainer} />
-      </Container>
+      <div>
+        <div className="bg-img"></div>
+        <Container>
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/:any" component={MenuContainer} />
+        </Container>
+      </div>
     );
   }
 }
