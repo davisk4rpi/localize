@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Card, Icon, Image, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Card, Icon, Image, Button, Header, Form, Segment, Divider, Statistic, Grid } from 'semantic-ui-react';
 
 export default class Issue extends Component {
 
@@ -9,57 +10,147 @@ export default class Issue extends Component {
     this.state = {
       data: this.props.data
     };
-
-    this.toggleCard = this.toggleCard.bind(this);
   }
 
-
-
-  componentDidMount() {
-  }
-
-  toggleCard() {
+  toggleCard = () => {
     const obj = {...this.state.data, isExpanded: !this.state.data.isExpanded};
     this.setState({data: obj});
   }
 
-  render() {
-    const {isExpanded, description, title, imgSrc} = this.state.data;
-    const descriptionComponent = isExpanded ?
-      <Card.Description>
-        {description}
-      </Card.Description>
-      : '';
+  userVote = yeaOrNay => {
+    const obj = {...this.state.data, userVote: yeaOrNay, userVoted: true};
+    this.setState({data: obj});
+  }
 
-    const yeaOrNay = isExpanded ?
-      <Card.Content extra>
-        <Button>Yea</Button>
-        <Button>Nay</Button>
-      </Card.Content>
-      : '';
+  handleCommentChange = (e, { name, value }) => {
+    // this.setState({ [name]: value })
+    const obj = {...this.state.data, userComment: value};
+    this.setState({data: obj});
+  }
+
+  handleCommentSubmit = () => {
+    const { userComment } = this.state.data;
+    const obj = {...this.state.data, userCommented: true, userComment};
+    this.setState({data: obj});
+  }
+
+  skippedComment = () => {
+    const obj = {...this.state.data, skippedComment: true};
+    this.setState({data: obj});
+  }
+
+  render() {
+    const {
+      isExpanded,
+      userVote,
+      userVoted,
+      userCommented,
+      userYeaCount,
+      userNayCount,
+      skippedComment,
+      description,
+      title,
+      imgSrc,
+    } = this.state.data;
+    let descriptionComponent = '';
+    let yeaOrNay = '';
+    let commentForm = '';
+    let thankYou = '';
+    let openCardContent = '';
+
+    if (isExpanded) {
+      if (userCommented || skippedComment) {
+        thankYou = (
+          <div>
+            <Header.Subheader>Thank You!</Header.Subheader>
+            <p>Your opinion has been counted and emailed to your local officials</p>
+            <Segment>
+              <Header>User Stats</Header>
+              <Divider />
+              <Statistic.Group>
+                  <Statistic>
+                    <Statistic.Value>
+                      {userYeaCount}
+                      <Icon name="thumbs up" size="small" color="green"/>
+                    </Statistic.Value>
+                    <Statistic.Label>Yeas</Statistic.Label>
+                  </Statistic>
+                  <Statistic>
+                    <Statistic.Value>
+                      {userNayCount}
+                      <Icon name="thumbs down" size="small" color="red"/>
+                    </Statistic.Value>
+                    <Statistic.Label>Nays</Statistic.Label>
+                  </Statistic>
+              </Statistic.Group>
+            </Segment>
+            <Button as={Link} to="/reps">See who got contacted</Button>
+          </div>
+        );
+      }
+      else if (userVoted) {
+        const doOrDont = userVote === 'yea' ? 'do' : 'don\'t';
+        commentForm = (
+          <div className="comment-form">
+            <Header>Thanks for your vote!</Header>
+            <Header.Subheader>Why {doOrDont} you support this?</Header.Subheader>
+            <Form>
+              <Form.TextArea
+                placeholder="Tell your local representatives your opinion..."
+                name="userComment"
+                onChange={this.handleCommentChange}
+              />
+              <Grid>
+                <Grid.Row columns={3} stretched>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column textAlign="center">
+                    <Form.Button onClick={this.handleCommentSubmit}>Submit</Form.Button>
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Button onClick={this.skippedComment}>Skip</Button>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Form>
+          </div>
+        );
+      }
+      else {
+        descriptionComponent = (
+          <Card.Description>
+            {description}
+          </Card.Description>
+        );
+
+        yeaOrNay = (
+          <div className="text-center">
+            <Button onClick={() => this.userVote('yea')}>Yea</Button>
+            <Button onClick={() => this.userVote('nay')}>Nay</Button>
+          </div>
+        );
+      }
+
+      openCardContent = (
+        <Card.Content extra>
+          {yeaOrNay}
+          {commentForm}
+          {thankYou}
+        </Card.Content>
+      );
+    }
 
     return (
-      <Card onClick={this.toggleCard} fluid>
-        <Image src={imgSrc} />
+      <Card fluid>
+        <Image src={imgSrc} onClick={this.toggleCard} />
         <Card.Content>
-          <Card.Header>
+          <Card.Header onClick={this.toggleCard}>
             {title}
             <Icon name="dropdown" />
           </Card.Header>
-          {/*<Card.Meta>*/}
-            {/*<span className='date'>*/}
-              {/*Joined in 2015*/}
-            {/*</span>*/}
-          {/*</Card.Meta>*/}
           {descriptionComponent}
         </Card.Content>
-        {yeaOrNay}
-        {/*<Card.Content extra>*/}
-          {/*<a>*/}
-            {/*<Icon name='user' />*/}
-            {/*22 Friends*/}
-          {/*</a>*/}
-        {/*</Card.Content>*/}
+        {openCardContent}
       </Card>
     );
   }
