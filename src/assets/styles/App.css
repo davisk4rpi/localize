@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo:400,700");
 body {
-  background-color: black; }
+  background-color: black;
+  color: white !important; }
 
 h1, h2, h3, h4, h5, h6, .ui.header {
   color: #000070; }
 
 #menu-btn {
-  margin-top: 10px; }
+  margin-top: 10px;
+  color: #fff;
+  background-color: transparent; }
+  #menu-btn i {
+    font-size: 2.5rem; }
 
 #brand-logo {
   margin: 15px;
