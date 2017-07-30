@@ -29,7 +29,11 @@ export default class Rep extends Component {
         <List>
           <List.Item>
             <List.Icon name='phone' />
-            <List.Content>{phone}</List.Content>
+            <List.Content>
+              <a href={`tel:+1${phone}`}>
+                {phone}
+              </a>
+            </List.Content>
           </List.Item>
           <List.Item>
             <List.Icon name='mail' />
