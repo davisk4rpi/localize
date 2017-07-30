@@ -94,7 +94,7 @@ export default class Issue extends Component {
           <div className="comment-form">
             <Header>Thanks for your vote!</Header>
             <Header.Subheader>Why {doOrDont} you support this?</Header.Subheader>
-            <Form>
+            <Form name={title}>
               <Form.TextArea
                 placeholder="Tell your local representatives your opinion..."
                 name="userComment"
@@ -105,10 +105,10 @@ export default class Issue extends Component {
                   <Grid.Column>
                   </Grid.Column>
                   <Grid.Column textAlign="center">
-                    <Form.Button onClick={this.handleCommentSubmit}>Submit</Form.Button>
+                    <Form.Button type='button' onClick={this.handleCommentSubmit}>Submit</Form.Button>
                   </Grid.Column>
                   <Grid.Column>
-                    <Button onClick={this.skippedComment}>Skip</Button>
+                    <Form.Button type='button' onClick={this.skippedComment}>Skip</Form.Button>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>

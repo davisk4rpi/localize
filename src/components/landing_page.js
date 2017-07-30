@@ -31,8 +31,8 @@ export default class LandingPage extends Component {
       <Grid centered id="login-page">
         <Grid.Row centered>
           <Grid.Column width={14} textAlign='center'>
-            <Header as='h1'>Welcome to Localize</Header>
-            <Header as='h3'>Increasing voter engagement with local governments accross the Country.</Header>
+            <Header as='h1' id="brand-logo">LOCALIZE</Header>
+            <Header as='h3'>Engaging You With Local Government</Header>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row centered>
