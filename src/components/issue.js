@@ -140,10 +140,13 @@ export default class Issue extends Component {
       );
     }
 
+    let flexClass = isExpanded ? '' : "flex-feed-item";
+
+
     return (
-      <Card fluid>
-        <Image src={imgSrc} onClick={this.toggleCard} />
-        <Card.Content>
+      <Card fluid className="feed-item">
+        <Card.Content className={flexClass}>
+          <Image src={imgSrc} onClick={this.toggleCard} floated='left' size='tiny'/>
           <Card.Header onClick={this.toggleCard}>
             {title}
             <Icon name="dropdown" />

@@ -58,6 +58,14 @@ h1, h2, h3, h4, h5, h6, .ui.header {
   margin-bottom: 40px;
 }
 
+.ui.card.feed-item {
+  margin: 14px auto;
+}
+.flex-feed-item {
+  align-items: center;
+  display: flex;
+}
+
 // Login Page
 
 #login-page {
