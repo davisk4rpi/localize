@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6, .ui.header {
 }
 
 #brand-logo,
-.ui.header,
+#login .ui.header,
 .ui.form .field>label {
   color: white !important;
 }
@@ -84,6 +84,12 @@ h1, h2, h3, h4, h5, h6, .ui.header {
 
 // Rep Page
 
+#rep-page {
+  .ui.header {
+    color: white;
+  }
+}
+
 #rep-card {
   .header {
     margin-top: 25px;
@@ -105,4 +111,12 @@ h1, h2, h3, h4, h5, h6, .ui.header {
 #paypal-btn {
   display: block;
   margin: 0 auto;
+}
+
+.category-box > * {
+  height: 100px;
+}
+
+#categories-page .ui.header {
+  margin-top: 10px;
 }

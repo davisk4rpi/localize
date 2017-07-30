@@ -10,7 +10,7 @@ export default class SignUpBox extends Component {
         <Form.Input label='Password' placeholder='*********' type='password' />
         <Form.Input label='Verify Password' placeholder='*********' type='password' />
         <Button.Group>
-          <Button as={Link} to="/feed" id="login-btn">Sign Up</Button>
+          <Button as={Link} to="/categories" id="login-btn">Sign Up</Button>
           <Button onClick={this.props.handleClick}>Cancel</Button>
         </Button.Group>
       </Form>
