@@ -15,7 +15,7 @@ export default class DonatePage extends Component {
               <input type="hidden" name="item_name" value="Team In Training" />
               <input type="hidden" name="currency_code" value="USD" />
               <input type="hidden" name="amount" value="25.00" />
-              <input id="paypal-btn" type="image" src="http://www.paypal.com/en_US/i/btn/x-click-butcc-donate.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
+              <input id="paypal-btn" type="image" src="http://www.paypal.com/en_US/i/btn/x-click-butcc-donate.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
             </form>
           </Grid.Column>
         </Grid.Row>
