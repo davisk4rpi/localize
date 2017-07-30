@@ -3,7 +3,6 @@ import { Grid, Header } from 'semantic-ui-react';
 import { Route } from 'react-router-dom';
 import LoginBox from './login_box.js'
 import SignUpBox from './sign_up_box.js'
-import LoginSignUpBox from './login_sign_up_box.js'
 
 export default class LandingPage extends Component {
   render(){
@@ -16,8 +15,7 @@ export default class LandingPage extends Component {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row centered>
-          <Route exact path="/" component={LoginSignUpBox} />
-          <Route exact path="/login" component={LoginBox} />
+          <Route exact path="/" component={LoginBox} />
           <Route exact path="/signup" component={SignUpBox} />
         </Grid.Row>
       </Grid>
