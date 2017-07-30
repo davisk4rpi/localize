@@ -8,6 +8,7 @@ import SettingsPage from './settings_page';
 import VolunteerContainer from './volunteer_container';
 import RepContainer from './rep_container';
 import ProfilePage from './profile_page';
+import DonatePage from './donate_page';
 
 export default class MenuContainer extends Component {
   constructor(props) {
@@ -40,11 +41,12 @@ export default class MenuContainer extends Component {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
-            <Route exact path="/feed" component={FeedContainer} />
-            <Route exact path="/settings" component={SettingsPage} />
-            <Route exact path="/reps" component={RepContainer} />
-            <Route exact path="/profile" component={ProfilePage} />
-            <Route exact path="/volunteer" component={VolunteerContainer} />
+            <Route path="/feed" component={FeedContainer} />
+            <Route path="/settings" component={SettingsPage} />
+            <Route path="/reps" component={RepContainer} />
+            <Route path="/profile" component={ProfilePage} />
+            <Route path="/volunteer" component={VolunteerContainer} />
+            <Route path="/donate" component={DonatePage} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
