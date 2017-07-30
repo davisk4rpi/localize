@@ -5,7 +5,29 @@ import LoginBox from './login_box.js'
 import SignUpBox from './sign_up_box.js'
 
 export default class LandingPage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      signup: false
+    }
+  }
+
+  signUp = () => {
+    this.setState({signup: true});
+  }
+
+  logIn = () => {
+    this.setState({signup: false});
+  }
+
   render(){
+    let box;
+    if (this.state.signup) {
+      box = <SignUpBox handleClick={this.logIn}/>;
+    } else {
+      box = <LoginBox handleClick={this.signUp}/>;
+    }
     return(
       <Grid centered id="login-page">
         <Grid.Row centered>
@@ -15,8 +37,7 @@ export default class LandingPage extends Component {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row centered>
-          <Route exact path="/" component={LoginBox} />
-          <Route exact path="/signup" component={SignUpBox} />
+          {box}
         </Grid.Row>
       </Grid>
     );
