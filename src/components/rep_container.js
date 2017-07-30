@@ -36,7 +36,7 @@ export default class RepContainer extends Component {
     });
 
     return (
-      <div>
+      <div id="rep-page">
         <Header as="h2">My Representatives</Header>
         {officialComponents}
       </div>

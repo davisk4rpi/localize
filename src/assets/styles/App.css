@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6, .ui.header {
   font-weight: 700; }
 
 #brand-logo,
-.ui.header,
+#login .ui.header,
 .ui.form .field > label {
   color: white !important; }
 
@@ -44,6 +44,9 @@ h1, h2, h3, h4, h5, h6, .ui.header {
   background-color: #673ab7;
   color: #fff; }
 
+#rep-page .ui.header {
+  color: white; }
+
 #rep-card .header {
   margin-top: 25px; }
 
@@ -56,3 +59,9 @@ h1, h2, h3, h4, h5, h6, .ui.header {
 #paypal-btn {
   display: block;
   margin: 0 auto; }
+
+.category-box > * {
+  height: 100px; }
+
+#categories-page .ui.header {
+  margin-top: 10px; }

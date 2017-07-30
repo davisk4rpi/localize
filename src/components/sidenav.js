@@ -17,6 +17,9 @@ export default class Sidenav extends Component {
         <Menu.Item as={Link} to='/reps' name='my-reps'>
           My Reps
         </Menu.Item>
+        <Menu.Item as={Link} to='/categories' name='my-categories'>
+          Issues I follow
+        </Menu.Item>
         <Menu.Item name='rtv'>
           <a href="https://www.rockthevote.com/register-to-vote/" target="_blank" rel="noopener noreferrer">Register to Vote</a>
         </Menu.Item>

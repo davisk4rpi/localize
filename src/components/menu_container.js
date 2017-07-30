@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom';
 import { Grid, Button, Icon, Header } from 'semantic-ui-react';
 
 import Sidenav from './sidenav';
+import CategoriesContainer from './categories_container';
 import FeedContainer from './feed_container';
 import SettingsPage from './settings_page';
 import VolunteerContainer from './volunteer_container';
@@ -20,7 +21,6 @@ export default class MenuContainer extends Component {
   }
 
   toggleVisibility = () => {
-    console.log(this.state);
     this.setState({ navVisible: !this.state.navVisible });
   }
 
@@ -43,6 +43,7 @@ export default class MenuContainer extends Component {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
+            <Route path="/categories" component={CategoriesContainer} />
             <Route path="/feed" component={FeedContainer} />
             <Route path="/settings" component={SettingsPage} />
             <Route path="/reps" component={RepContainer} />

@@ -16,7 +16,6 @@ export default class FeedContainer extends Component {
     let issues;
     database.ref('/issues').once('value').then( snap => {
       issues = snap.val();
-      console.log(issues);
       this.setState({ issues });
     });
   }
