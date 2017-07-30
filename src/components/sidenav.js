@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Sidebar, Segment, Menu, Icon } from 'semantic-ui-react'
+import { Sidebar, Menu, Icon } from 'semantic-ui-react'
 
 export default class Sidenav extends Component {
   render() {
     const { visible } = this.props
-    console.log(this.props);
     return (
       <Sidebar as={Menu} animation='overlay' width='thin' visible={visible} icon='labeled' vertical inverted>
         <Menu.Item name='home'>

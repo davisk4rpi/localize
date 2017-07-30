@@ -3,51 +3,28 @@ import _ from 'lodash';
 import { Button, Grid } from 'semantic-ui-react';
 import Sidenav from './sidenav';
 import Issue from './issue';
+import database from '../database';
 
 export default class FeedContainer extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      // should be empty!
-      issues: [
-        {
-          i1: {
-            isExpanded: false,
-            userVoted: false,
-            userVote: '',
-            userYeaCount: 12,
-            userNayCount: 4,
-            userCommented: false,
-            userComment: '',
-            isPast: false,
-            passed: undefined,
-            title: 'Smoking in Public Spaces',
-            description: 'Some people want to blow smoke in your face as you walk by. Do you support an ordinance to stop this?',
-            imgSrc: 'img/smoker-lady.jpg'
-          }
-        },
-        {
-          i2: {
-            isExpanded: false,
-            userVoted: false,
-            userVote: '',
-            userYeaCount: 30,
-            userNayCount: 16,
-            userCommented: false,
-            userComment: '',
-            isPast: true,
-            passed: true,
-            title: 'Recycled water for Self Storage',
-            description: 'Dang, that is a sweet earth: ROUND!',
-            imgSrc: 'img/recycled-water.jpg'
-          }
-        }
-      ],
+      issues: {},
       navVisible: false
     };
+
     this.closeNav = this.closeNav.bind(this);
     this.toggleVisibility = this.toggleVisibility.bind(this);
+  }
+
+  componentDidMount() {
+    let issues;
+    database.ref('/issues').once('value').then( snap => {
+      issues = snap.val();
+      console.log(issues);
+      this.setState({ issues });
+    });
   }
 
   toggleVisibility() {
@@ -62,12 +39,10 @@ export default class FeedContainer extends Component {
 
   render() {
     const {navVisible, issues} = this.state;
-    const issueComponents = issues.map( issue => {
-      let issueId, issueObj;
-      _.forOwn(issue, (value, key) => {
-        issueId = key;
-        issueObj = value;
-      });
+    let issueId, issueObj;
+    const issueComponents = _.map(issues, (value, key) => {
+      issueId = key;
+      issueObj = value;
       return (
         <Issue
           key={issueId}
