@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export default class SettingsPage extends Component {
   render() {
     return (
-      <div></div>
+      <div>Coming Soon</div>
     )
   }
 }

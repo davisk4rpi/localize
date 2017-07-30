@@ -23,6 +23,9 @@ export default class Sidenav extends Component {
         <Menu.Item  as={Link} to='/volunteer' name='volunteer'>
           Volunteer
         </Menu.Item>
+        <Menu.Item name='donate' as={Link} to='/donate'>
+          Donate
+        </Menu.Item>
         <Menu.Item name='settings' as={Link} to='/settings'>
           Settings
         </Menu.Item>
