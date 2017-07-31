@@ -25,7 +25,7 @@ export default class LandingPage extends Component {
     if (this.state.signup) {
       box = <SignUpBox handleClick={this.logIn}/>;
     } else {
-      box = <LoginBox handleClick={this.signUp}/>;
+      box = <LoginBox handleSignUpClick={this.signUp}/>;
     }
     return(
       <Grid centered id="login-page">

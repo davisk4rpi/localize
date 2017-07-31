@@ -10,7 +10,7 @@ export default class LoginBox extends Component {
         <Form.Input label='Password' placeholder='*********' type='password' size="large" />
         <Button.Group>
           <Button as={Link} to="/feed" id="login-btn">Login</Button>
-          <Button onClick={this.props.handleClick}>Sign Up</Button>
+          <Button onClick={this.props.handleSignUpClick} type="button">Sign Up</Button>
         </Button.Group>
       </Form>
     );
