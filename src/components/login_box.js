@@ -6,8 +6,8 @@ export default class LoginBox extends Component {
   render() {
     return (
       <Form>
-        <Form.Input label='Email' placeholder='optimus@prime.com' />
-        <Form.Input label='Password' placeholder='*********' type='password' />
+        <Form.Input label='Email' placeholder='optimus@prime.com' size="large" />
+        <Form.Input label='Password' placeholder='*********' type='password' size="large" />
         <Button.Group>
           <Button as={Link} to="/feed" id="login-btn">Login</Button>
           <Button onClick={this.props.handleClick}>Sign Up</Button>
