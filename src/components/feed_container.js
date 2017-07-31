@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import {Modal} from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
 import _ from 'lodash';
 
 import Issue from './issue';
-import Rep from './rep';
 import database from '../database';
 
 export default class FeedContainer extends Component {
@@ -52,6 +51,7 @@ export default class FeedContainer extends Component {
 
     return (
       <div>
+        <Header style={{color: 'white'}}>Current Issues</Header>
         {issueComponents}
       </div>
     );
