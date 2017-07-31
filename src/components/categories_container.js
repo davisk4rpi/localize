@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Header, Icon, Segment} from 'semantic-ui-react';
+import { Grid, Header, Icon, Segment, Button} from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 export default class CategoriesContainer extends Component {
   constructor(props) {
@@ -68,7 +69,9 @@ export default class CategoriesContainer extends Component {
 
     return(
       <Grid centered padded id="categories-page" columns={2}>
-          {list}
+        <Button as={Link} to="/feed" id="login-btn" size="small">Go to My Feed</Button>
+        <Header style={{color: 'white'}}>What issues matter most to you?</Header>
+        {list}
       </Grid>
     );
   }
