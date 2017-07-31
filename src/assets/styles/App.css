@@ -39,9 +39,6 @@ h1, h2, h3, h4, h5, h6 {
 .ui.fluid.card {
   margin-bottom: 40px; }
 
-.ui.card.feed-item {
-  margin: 14px auto; }
-
 .flex-feed-item {
   align-items: center;
   display: flex; }
@@ -60,13 +57,20 @@ h1, h2, h3, h4, h5, h6 {
   color: white; }
 
 #rep-page a {
-  font-size: 16px; }
+  font-size: 16px;
+  color: #4183c4; }
 
 .rep-card .header {
   margin-top: 25px; }
 
 .rep-card.ui.fluid.card {
   margin-bottom: 20px; }
+
+.rep-card i.icon {
+  font-size: 1.3em; }
+
+.rep-card .meta {
+  font-size: 0.8em !important; }
 
 .text-center {
   text-align: center; }
@@ -90,3 +94,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #profile-page .header {
   color: white !important; }
+
+.issue-card .green.button {
+  margin-right: 20px; }
+
+.issue-card.ui.card.feed-item {
+  margin: 14px auto; }
+
+.modal a {
+  font-size: 16px;
+  color: #4183c4 !important; }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-import { Card, Icon, Image, Button, Header, Form, Segment, Divider, Statistic, Grid } from 'semantic-ui-react';
+import { Card, Icon, Image, Button, Header, Form, Segment, Divider, Statistic, Grid, Modal } from 'semantic-ui-react';
+import Rep from './rep';
 
 export default class Issue extends Component {
 
@@ -8,8 +8,15 @@ export default class Issue extends Component {
     super(props);
 
     this.state = {
-      data: this.props.data
+      data: this.props.data,
+      myRep: this.props.myRep
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.myRep.phone === undefined && nextProps.myRep) {
+      this.setState({myRep: nextProps.myRep});
+    }
   }
 
   toggleCard = () => {
@@ -63,7 +70,7 @@ export default class Issue extends Component {
         thankYou = (
           <div>
             <Header.Subheader>Thank You!</Header.Subheader>
-            <p>Your opinion has been counted and emailed to your local officials</p>
+            <p>Your opinion has been counted and emailed to your local officials.</p>
             <Segment>
               <Header>User Stats</Header>
               <Divider />
@@ -84,7 +91,14 @@ export default class Issue extends Component {
                   </Statistic>
               </Statistic.Group>
             </Segment>
-            <Button as={Link} to="/reps">See who got contacted</Button>
+            <div className="text-center">
+              <Modal trigger={<Button color="green">Take Action!</Button>} closeIcon>
+                <Modal.Content>
+                  <Header>Follow Up With Your Rep</Header>
+                  <Rep data={this.state.myRep} />
+                </Modal.Content>
+              </Modal>
+            </div>
           </div>
         );
       }
@@ -105,7 +119,7 @@ export default class Issue extends Component {
                   <Grid.Column>
                   </Grid.Column>
                   <Grid.Column textAlign="center">
-                    <Form.Button type='button' onClick={this.handleCommentSubmit}>Submit</Form.Button>
+                    <Form.Button type='button' onClick={this.handleCommentSubmit} color="green">Submit</Form.Button>
                   </Grid.Column>
                   <Grid.Column>
                     <Form.Button type='button' onClick={this.skippedComment}>Skip</Form.Button>
@@ -125,8 +139,8 @@ export default class Issue extends Component {
 
         yeaOrNay = (
           <div className="text-center">
-            <Button onClick={() => this.userVote('yea')}>Yea</Button>
-            <Button onClick={() => this.userVote('nay')}>Nay</Button>
+            <Button onClick={() => this.userVote('yea')} color="green">I Support</Button>
+            <Button onClick={() => this.userVote('nay')} color="red">I Oppose</Button>
           </div>
         );
       }
@@ -141,7 +155,7 @@ export default class Issue extends Component {
     }
 
     return (
-      <Card fluid className="feed-item">
+      <Card fluid className="feed-item issue-card">
         <Card.Content className="flex-feed-item" onClick={this.toggleCard}>
           <Image src={imgSrc} floated='left' size='tiny'/>
           <Card.Header>

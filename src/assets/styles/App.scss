@@ -58,9 +58,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 40px;
 }
 
-.ui.card.feed-item {
-  margin: 14px auto;
-}
 .flex-feed-item {
   align-items: center;
   display: flex;
@@ -91,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 
   a {
     font-size: 16px;
+    color: #4183c4;
   }
 }
 
@@ -101,6 +99,14 @@ h1, h2, h3, h4, h5, h6 {
 
   &.ui.fluid.card {
     margin-bottom: 20px;
+  }
+
+  i.icon {
+    font-size: 1.3em;
+  }
+
+  .meta {
+    font-size: 0.8em !important;
   }
 }
 
@@ -138,4 +144,18 @@ h1, h2, h3, h4, h5, h6 {
   .header {
     color: white !important;
   }
+}
+
+.issue-card {
+  .green.button {
+    margin-right: 20px;
+  }
+  &.ui.card.feed-item {
+    margin: 14px auto;
+  }
+}
+
+.modal a {
+  font-size: 16px;
+  color: #4183c4 !important;
 }
